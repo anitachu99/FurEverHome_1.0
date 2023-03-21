@@ -2,10 +2,17 @@
 FONT
 */
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
+
+/*
+BACKGROUND COLOR
+*/
 *{
   background: rgba(133,220,186,1);
 }
 
+/*
+heading
+*/
 .heading_box {
   position: relative;
   left: 211px;
@@ -29,6 +36,9 @@ FONT
   text-align: left;
 }
 
+/*
+Background Pics
+*/
 #catPic {
   width: 295px;
   height: 439px;
@@ -43,5 +53,55 @@ FONT
   position: relative;
   top: 17rem;
   left: 18rem;
+}
+
+/*
+Menu Buttons
+*/
+
+.menu_buttons button {
+  background-color: #41B3A3;
+  color: black;
+  border: none;
+  border-radius: 70%;
+  padding: 5px;
+  font-family: Merriweather;
+  font-weight: 900;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+  height: 106px;
+  width: 105px;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu_buttons button:active {
+  background-color: #41B3A3;
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(2px);
+}
+
+.menu_buttons button:not(:first-child) {
+  margin-top: 10px;
+}
+
+.aboutusBtn {
+  position: absolute;
+  top: 17rem;
+  left: 65rem;
+}
+
+.adoptBtn {
+  position: absolute;
+  top: 22rem;
+  left: 71rem;
+}
+
+.faqBtn {
+  position: absolute;
+  top: 27rem;
+  left: 65rem;
 }
 
