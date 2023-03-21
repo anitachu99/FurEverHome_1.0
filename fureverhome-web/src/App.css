@@ -1,0 +1,47 @@
+/*
+FONT
+*/
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
+*{
+  background: rgba(133,220,186,1);
+}
+
+.heading_box {
+  position: relative;
+  left: 211px;
+  /* top: 110px; */
+}
+
+.furEverHome_heading {
+  /* background-image: linear-gradient(90deg, #e8a87c,#c38d9e, #e27d60);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; */
+  color: rgb(0,0,0,1);
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 285px;
+  font-family: Merriweather;
+  font-weight: Bold;
+  font-size: 80px;
+  opacity: 1;
+  text-align: left;
+}
+
+#catPic {
+  width: 295px;
+  height: 439px;
+  position: relative;
+  top: 20rem;
+  left: 18rem;
+}
+
+#dogPic {
+  width: 659px;
+  height: 544px;
+  position: relative;
+  top: 17rem;
+  left: 18rem;
+}
+
