@@ -3,12 +3,12 @@ FONT
 */
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 
-/*
+/* /*
 BACKGROUND COLOR
 */
-*{
+/* *{
   background: rgba(133,220,186,1);
-}
+} */ 
 
 /*
 heading
@@ -103,5 +103,24 @@ Menu Buttons
   position: absolute;
   top: 27rem;
   left: 65rem;
+}
+
+/*
+Sections
+*/
+
+.homepage {
+  height: 1000px;
+  background-color: rgba(133,220,186,1);
+}
+
+.aboutUs_section {
+  height: 1000px;
+  background-color: rgba(133,220,186,1);
+}
+
+.faq_section {
+  height: 1000px;
+  background-color: rgba(133,220,186,1);
 }
 
