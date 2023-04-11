@@ -1,6 +1,7 @@
 import catImage from './images/cat.png';
 import dogImage from './images/dog.png';
 import { forwardRef } from 'react';
+import styles from './styling/AboutUs.module.scss'
 
 const AboutUs = forwardRef((props, ref) => {
     return (
@@ -8,8 +9,6 @@ const AboutUs = forwardRef((props, ref) => {
         <div id='heading_wrapper'>
           <h1 id='heading'>About Us</h1>
         </div>
-        {/* <img id='catPic' src={catImage} alt='' />
-        <img id='dogPic' src={dogImage} alt='' /> */}
       </section>
     )
 })
