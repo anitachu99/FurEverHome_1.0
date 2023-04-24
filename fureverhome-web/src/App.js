@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { createContext, useRef, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import './App.css';
 import AboutUs from './sections/AboutUs';
 import Faq from './sections/Faq';
@@ -9,22 +10,15 @@ function App() {
   const homepage = useRef(null);
   const aboutUs = useRef(null);
   const faq = useRef(null);
+  const adopt = useRef(null);
 
   return (
-    <div className="App">
-      <div ref={homepage}>
-        <Homepage
-          aboutUsRef={aboutUs}
-          faqRef={faq}
-        />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Homepage aboutUsRef={aboutUs} faqRef={faq} />} />
+          <Route path='/Adopt' element={<Adopt />} />
+        </Routes>
       </div>
-      <div ref={aboutUs}>
-        <AboutUs />
-      </div>
-      <div ref={faq}>
-        <Faq />
-      </div>
-    </div>
   );
 }
 
