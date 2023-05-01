@@ -8,8 +8,6 @@ const Faq = forwardRef((props, ref) => {
         <div id='heading_wrapper'>
           <h1 id='heading'>Faq</h1>
         </div>
-        {/* <img id='catPic' src={catImage} alt='' />
-        <img id='dogPic' src={dogImage} alt='' /> */}
       </section>
     )
 });
