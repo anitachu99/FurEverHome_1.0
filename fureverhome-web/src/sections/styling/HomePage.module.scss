@@ -14,7 +14,7 @@
 }
 
 #catPic {
-    width: 243px;
+    max-width: 243px;
     height: 398px;
     position: absolute;
     left: 325px;
@@ -22,7 +22,7 @@
 }
 
 #dogPic {
-    width: 659px;
+    max-width: 659px;
     height: 544px;
     position: absolute;
     left: 549px;
@@ -43,6 +43,7 @@ button {
     border-radius: 50%;
     width: 105px;
     height: 106px;
+    z-index: 999;
     font-family: 'Lato';
     font-size: 16px;
     font-weight: bolder;
@@ -74,7 +75,7 @@ button {
 }
 
 #aboutUs_btn {
-    position: absolute;
+    position: relative;
     left: 825px;
     top: 372px;
 }
