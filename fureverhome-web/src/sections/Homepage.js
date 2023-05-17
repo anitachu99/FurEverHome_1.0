@@ -19,8 +19,12 @@ const Homepage = ({aboutUsRef, faqRef}) => {
 
     return (
         <section className={styles.homepage}>
+            <div className={styles.circleGroup1}>
+                <div className={styles.circle1}></div>
+                <div className={styles.circle2}></div>
+            </div>
             <div className={styles.heading_box}>
-            <h1 className={styles.furEverHome_heading}>FurEver Home</h1>
+                <h1 className={styles.furEverHome_heading}>FurEver Home</h1>
             </div>
             <img id={styles.catPic} src={catImage} alt='' />
             <img id={styles.dogPic} src={dogImage} alt='' />

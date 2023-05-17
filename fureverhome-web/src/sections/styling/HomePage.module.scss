@@ -35,6 +35,7 @@
     font-family: 'Lato';
     font-weight: bolder;
     margin: 0;
+    text-shadow: 5px 5px#8e9294 ;
 }
 
 button {
@@ -92,7 +93,29 @@ button {
     top: 589px;
 }
 
-
+.circle1 {
+    width: 411.36px;
+    height: 411px;
+    left: 300px;
+    top: 160px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #C38D9E;
+    box-shadow: inset 2px 5px 3px #aa7b8a;
+}
+.circle2 {
+    width: 589.05px;
+    height: 589px;
+    left: 600px;
+    top: 250px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #E8A87C;
+    box-shadow: inset 2px 5px 3px #c9906b;
+}
+.circleGroup1 {
+    padding: 10px;
+}
 
 
 
