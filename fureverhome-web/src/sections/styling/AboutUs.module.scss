@@ -13,6 +13,7 @@
     margin: 50px;
     text-align: center;
     text-decoration: underline;
+    text-shadow: 5px 5px#8e9294;
     position: relative;
     z-index: 999;
 }
@@ -51,6 +52,7 @@ article h1 {
     color:hsl(0, 0%, 95%);
     display: inline-block;
     letter-spacing: .25rem;
+    text-shadow: 2px 2px#8e9294;
 }
 
 .rect {
@@ -101,5 +103,6 @@ article h1 {
     letter-spacing: 5px;
     left: 450px;
     box-shadow: 5px 5px #ac7c8b;
+    text-shadow: 5px 5px#8e9294;
 }
 
