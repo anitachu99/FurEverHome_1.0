@@ -16,6 +16,11 @@
     text-shadow: 5px 5px#8e9294;
     position: relative;
     z-index: 999;
+    background-color: transparent;
+}
+
+#headerWrapper {
+    background-color: transparent;
 }
 
 
@@ -26,6 +31,7 @@ main {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
+    background-color: transparent;
 }
 
 article {
@@ -34,6 +40,7 @@ article {
     padding: 40px;
     position: relative;
     text-align: center;
+    background-color: transparent;
 }
 
 img {
@@ -42,6 +49,7 @@ img {
     height: 310px;
     border-radius: 30px;
     position: relative;
+    background-color: transparent;
 }
 
 article h1 {
@@ -53,6 +61,7 @@ article h1 {
     display: inline-block;
     letter-spacing: .25rem;
     text-shadow: 2px 2px#8e9294;
+    background-color: transparent;
 }
 
 .rect {
@@ -64,6 +73,7 @@ article h1 {
     position: absolute;
     left: 80px;
     top: 20px;
+    background-color: transparent;
 }
 
 .circle {
@@ -86,6 +96,7 @@ article h1 {
 }
 .circleGroup1 {
     padding: 10px;
+    background-color: transparent;
 }
 
 .rect2 {
@@ -104,5 +115,13 @@ article h1 {
     left: 450px;
     box-shadow: 5px 5px #ac7c8b;
     text-shadow: 5px 5px#8e9294;
+}
+
+.rect2 h1 {
+    background-color: transparent;
+}
+
+.rect2Wrapper {
+    background-color: transparent;
 }
 

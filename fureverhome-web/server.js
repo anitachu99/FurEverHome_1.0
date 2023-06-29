@@ -1,9 +1,11 @@
-const port = 3000;
+const port = 3001;
 
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 require('dotenv').config();
 const app = express();
+app.use(cors());
 
 const dataUrl = 'https://api.petfinder.com/v2/animals';
 const tokenUrl = 'https://api.petfinder.com/v2/oauth2/token';
@@ -18,15 +20,17 @@ const fetchToken = async () => {
         params.append("client_id", key);
         params.append("client_secret", secret);
 
-        const res = await fetch (
-            tokenUrl,
-            {
-                method: "POST",
-                body: params
-            }
-        );
+        // const res = await fetch (
+        //     tokenUrl,
+        //     {
+        //         method: "POST",
+        //         body: params
+        //     }
+        // );
+        const res = await axios.post(tokenUrl, params);
         // console.log(await res.json());
-        const data = await res.json();
+        // const data = await res.json();
+        const data = res.data;
         return data.access_token;
     } catch (error) {
         console.error(error);
@@ -37,12 +41,24 @@ const fetchToken = async () => {
 app.get('/Adopt', async (request, result) => {
     try {
         const token = await fetchToken();
+        const { id, name, type, breeds, gender, location, age,
+            color, photos} = request.query;
         const res = await axios.get(dataUrl, {
+            params: {
+                id,
+                name,
+                type,
+                breeds,
+                gender,
+                location,
+                age,
+                color,
+                photos
+            },
             headers: {
                 Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/x-www-form-encoded',
-            },
-            params: request.query,
+                'Content-Type': 'application/multipart/form-data',
+            }
         });
         result.json(res.data);
     } catch (error) {

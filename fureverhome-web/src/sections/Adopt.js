@@ -1,44 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
-require('dotenv').config();
+import style from './styling/Adopt.module.scss';
+import AdoptCards from './Adopt_cards';
+import CardPhotos from './cardPhotos';
+import { Grid } from '@material-ui/core';
 
 function Adopt () {
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-        const fetch = async () => {
+        const fetchingData = async () => {
             try {
-                const response = await axios.get('/Adopt', {
-                    params: {
-                        type: 'dog',
-                        location: 'New York',
-                    },
+                const response = await axios.get('http://localhost:3001/Adopt', {
+                    headers: {
+                        'Content-Type': 'application/multipart/form-data',
+                    }
                 });
-                setData(response.data.animals);
+                setData(response.data.animals || []);
+                setLoading(false);
             } catch (error) {
                 console.error(error);
             }
         };
-        fetch();
+        fetchingData();
     }, []);
     console.log(data);
     return (
-        <main className='Adopt_page'>
+        <main className={style.Adopt_page}>
             <h1>Adopt Your FurEver Pet</h1>
-            {data.length === 0 ? ( 
-                <CircularProgress />
-            ) : (
-                data.map((result) => (
-                    <section key={result.id}>
-                        <h4>Name: {result.name}</h4>
-                        <p>Type: {result.type}</p>
-                        <p>Breed: {result.breed}</p>
-                        <p>Gender: {result.gender}</p>
-                        <p>Location: {result.location}</p>
-                    </section>
-                ))
-            )}
+            <Grid container spacing={2}>
+                {loading ? (
+                    <CircularProgress />
+                ) : (
+                    data.map((cards, index) => (
+                        <Grid className={style.grid} item xs={12} sm={6} md={4} key={index}>
+                            <AdoptCards cards={cards} />
+                            {/* {cards.photos 
+                            && cards.photos.length > 0 
+                            && (<CardPhotos imageUrls={cards.photos.map(photo => photo.full || photo.large || photo.medium || photo.small )} /> )} */}
+                        </Grid>
+                    ))
+                    
+                )}
+
+            </Grid>
         </main>
     )
 }
