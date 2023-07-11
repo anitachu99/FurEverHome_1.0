@@ -5,6 +5,8 @@ import style from './styling/Adopt.module.scss';
 import AdoptCards from './Adopt_cards';
 import CardPhotos from './cardPhotos';
 import { Grid } from '@material-ui/core';
+import NavBar from './NavBar';
+import { BrowserRouter } from 'react-router-dom';
 
 function Adopt () {
     const [data, setData] = useState([]);
@@ -29,17 +31,20 @@ function Adopt () {
     console.log(data);
     return (
         <main className={style.Adopt_page}>
-            <h1>Adopt Your FurEver Pet</h1>
-            <Grid container spacing={2}>
+            <NavBar />
+            <Grid
+                className={style.main_grid}
+                container 
+                direction="row" 
+                justifyContent="center" 
+                alignItems="stretch" 
+                spacing={2} >
                 {loading ? (
                     <CircularProgress />
                 ) : (
                     data.map((cards, index) => (
-                        <Grid className={style.grid} item xs={12} sm={6} md={4} key={index}>
-                            <AdoptCards cards={cards} />
-                            {/* {cards.photos 
-                            && cards.photos.length > 0 
-                            && (<CardPhotos imageUrls={cards.photos.map(photo => photo.full || photo.large || photo.medium || photo.small )} /> )} */}
+                        <Grid className={style.grid} item xs={12} sm={6} md={3} key={index}>
+                            <AdoptCards className={style.cards} cards={cards} />
                         </Grid>
                     ))
                     

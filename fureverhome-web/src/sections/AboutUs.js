@@ -16,7 +16,7 @@ const AboutUs = forwardRef((props, ref) => {
         <div id={styles.headerWrapper}>
           <h1 id={styles.heading}>adopt your FUREVER friend</h1>
         </div> 
-         <main>
+         <main className={styles.carousel}>
           <article className={styles.dogPickupWrapper}>
             <div className={styles.rect}></div>
             <img id={styles.dogPickup} src={dogPickup} alt='' />

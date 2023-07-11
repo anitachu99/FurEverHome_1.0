@@ -10,7 +10,7 @@ const cardPhotos = ({ imageUrls }) => {
 
     return (
         <div>
-            <CardMedia component="img" alt="Pet" image={imageUrl} />
+            <CardMedia component="img" alt="Pet" image={imageUrl} style={{width:350, height: 330}} />
         </div>
     )
 }
