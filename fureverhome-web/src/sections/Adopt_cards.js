@@ -1,15 +1,12 @@
-import { Card, CardContent, CardHeader, CardMedia, Typography } from "@material-ui/core";
+import { Card, CardContent, CardHeader, CardMedia, Typography } from "@mui/material";
 import style from "./styling/Adopt_cards.module.scss";
 import { useEffect, useState, Truncate } from "react";
 import axios from 'axios';
 import CardPhotos from "./cardPhotos";
 import NoImage from "./images/icons8-no-image-100.png";
-import { createTheme, styled, width } from "@mui/system";
-import { pink } from "@mui/material/colors";
 
 const AdoptCards = ({cards}) => {
     const [images, setImages] = useState([]);
-    const [imageSize, setImageSize] = useState({})
     
     useEffect(() => {
         const getImage = async () => {
@@ -17,6 +14,7 @@ const AdoptCards = ({cards}) => {
                 if (cards.photos && Object.keys(cards.photos).length > 1) {
                     const photoObjects = Object.values(cards.photos);
                     const extractUrls = photoObjects.flatMap(photo => Object.values(photo));
+                    console.log(`photoObjects: ${cards.photos}`);
                     setImages(extractUrls);
                 }
             } catch (error) {
@@ -26,15 +24,8 @@ const AdoptCards = ({cards}) => {
         getImage();
     }, [cards.photos]);
 
-    const imageStyle = {
-        width: 350,
-        height: 330
-    };
-
-    
-
     return (
-        <Card style={{backgroundColor: "#ffb98a"}} className={style.animalCards} sx={{ maxWidth: 345 }}>
+        <Card style={{backgroundColor: "#ffb98a"}} className={style.animalCards}>
                <CardMedia className={style.images}>
                {images.length > 0 ? (
                         <CardPhotos imageUrls={images} />
@@ -44,7 +35,7 @@ const AdoptCards = ({cards}) => {
                </CardMedia>
                 <CardContent className={style.content}>
                 <Typography className={style.name} gutterBottom variant="h5"  component="div">
-                    {cards.name}
+                    {cards.name.length > 10 ? cards.name.substring(0,10) + "\u2026" : cards.name}
                 </Typography>
                 <Typography  className={style.info} variant="body2">
                     <li>{cards.type}</li>

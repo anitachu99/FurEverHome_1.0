@@ -1,4 +1,4 @@
-import { CardMedia } from "@material-ui/core";
+import { CardMedia } from "@mui/material";
 import React from "react";
 
 const cardPhotos = ({ imageUrls }) => {
