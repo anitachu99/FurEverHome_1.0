@@ -5,9 +5,23 @@ import { NavBarItems } from "./NavBarItems";
 import { Link } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faCircleInfo, faCircleQuestion, faUser, faHandFist } from '@fortawesome/free-solid-svg-icons';
-import Login from "./Login";
+import { useNavigate } from "react-router";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase-config";
 
-const NavBar = ({ setPopup }) => {
+const NavBar = ({ setLoginPopup, setRegPopup }) => {
+    const nav = useNavigate();
+
+    const handleLogOut = () => {
+        signOut(auth).then(() => {
+            nav("/");
+            console.log("Signed Out Successfully");
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMsg = error.message;
+            console.log(errorCode, errorMsg);
+        });
+    }
     return (
         <div className={style.navBarWrapper}>
             <a href="/" className={style.homeLogo}>
@@ -30,8 +44,9 @@ const NavBar = ({ setPopup }) => {
                 <a href="/Faq" className={style.faq_Icon}>
                     <FontAwesomeIcon icon={faCircleQuestion} size="2xl" style={{color: "#c38d9e",}} />
                 </a>
-                <span onClick={() => setPopup(true)} className={style.signInBtn}>Sign In</span>
-                
+                <span onClick={() => setLoginPopup(true)} className={style.signInBtn}>Sign In</span>
+                <span onClick={handleLogOut} className={style.signInBtn}>Log Out</span>
+                <span onClick={() => setRegPopup(true)} className={style.signInBtn}>Register</span>
             </div>
         </div>
     )

@@ -72,4 +72,3 @@ app.get('/Adopt', async (request, result) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-

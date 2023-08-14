@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.loginForm {
+.regForm {
     width: 100%;
     position: relative;
     max-width: 640px;
@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.loginWrapper {
+.regWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,10 +29,8 @@
     padding-right: 80px;
     padding-left: 80px;
     border-radius: 20px;
-    height: 400px;
     box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
 }
-
 .closeButton {
     color: white;
     background-color: transparent;
@@ -44,8 +42,7 @@
     left: 300px;
     cursor: pointer;
 }
-
-.loginHeader {
+.regHeader {
     width: 100%;
     color: white;
     border-bottom: 2px solid white;
@@ -71,7 +68,7 @@ input {
     font-size: 50px;
 }
 
-.loginBox {
+.regBox {
     border: 1px solid lightgrey;
     display: flex;
     justify-content: center;
@@ -88,7 +85,7 @@ input {
     outline: none;
 }
 
-.loginButton {
+.regButton {
     width: 150px;
     height: 50px;
     background-color: transparent;
@@ -106,20 +103,9 @@ input {
     align-items: center;
 }
       
-.loginButton:hover {
+.regButton:hover {
     transform: scale(1.03);
     letter-spacing: 4px;
     background-color: rgb(79, 78, 78);
     color: white;
-}
-
-.noaccount {
-    color: white;
-    font-size: 15px;
-}
-
-.registerlink {
-    color: white;
-    text-decoration: underline;
-    font-size: 14px;
 }

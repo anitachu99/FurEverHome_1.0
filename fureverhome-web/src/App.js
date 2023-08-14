@@ -1,11 +1,12 @@
 import { createContext, useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
-import './App.css';
 import AboutUs from './sections/AboutUs';
 import Faq from './sections/Faq';
 import Routing from './sections/Routing';
 import Adopt from './sections/Adopt';
 import Homepage from './sections/Homepage';
+import Login from './sections/Login';
+import Register from './sections/Register';
 
 function App() {
   const aboutUsRef = useRef(null);
@@ -21,6 +22,8 @@ function App() {
             <Route path='/Adopt' element={<Adopt />} />
             <Route path='/AboutUs' element={<AboutUs ref={aboutUsRef} />} />
             <Route path='/Faq' element={<Faq ref={<Faq ref={faqRef} />} />} />
+            <Route path='/Login' element={<Login />} />
+            <Route path='/Register' element={<Register />} />
           </Routes>
         </Router>
       </div>

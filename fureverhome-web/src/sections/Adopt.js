@@ -3,17 +3,19 @@ import axios from 'axios';
 import { CircularProgress } from '@mui/material';
 import style from './styling/Adopt.module.scss';
 import AdoptCards from './Adopt_cards';
-import CardPhotos from './cardPhotos';
 import { Grid } from '@mui/material';
 import NavBar from './NavBar';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useNavigate } from 'react-router-dom';
 import Login from './Login';
-import styling from "./styling/Login.module.scss";
+import Register from './Register';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from '../firebase-config';
 
 function Adopt () {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [popup, setPopup] = useState(false);
+    const [loginPopup, setLoginPopup] = useState(false);
+    const [regPopup, setRegPopup] = useState(false);
     
     useEffect(() => {
         const fetchingData = async () => {
@@ -30,13 +32,24 @@ function Adopt () {
             }
         };
         fetchingData();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const uID = user.uid;
+                console.log("uid", uID);
+            }
+            else {
+                console.log("User signed out")
+            }
+        });
     }, []);
     console.log(data);
 
     return (
         <main className={style.Adopt_page}>
-            <NavBar setPopup={setPopup} />
-            <Login onAction={popup} setonAction={setPopup} />
+            <NavBar setLoginPopup={setLoginPopup} setRegPopup={setRegPopup} />
+            <Login onAction={loginPopup} setonAction={setLoginPopup} setRegPopup={setRegPopup}/>
+            <Register onAction={regPopup} setonAction={setRegPopup} />
             <Grid
                 className={style.main_grid}
                 container 

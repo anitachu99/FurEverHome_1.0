@@ -26,7 +26,7 @@ body {
 }
 .searchBarWrapper {
   position: absolute;
-  left: 450px;
+  left: 420px;
   top: 13px;
 }
 
@@ -79,14 +79,14 @@ body {
   top: 30px;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
-  width: 300px;
+  width: 350px;
 }
 
 .signInBtn {
   // position: absolute;
-  width: 100px;
+  width: 120px;
   text-decoration: none;
   display: flex;
   align-items: center;
