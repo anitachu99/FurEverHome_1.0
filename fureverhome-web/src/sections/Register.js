@@ -9,6 +9,7 @@ import { auth } from "../firebase-config";
 
 const Register = ( props ) => {
     const [userInfo, setUserInfo] = useState({ name: '', email: '', pwd: ''});
+    const [pwdErr, setPwdErr] = useState('');
 
     const navigate = useNavigate();
     // const handleSubmit = async (e) => {
@@ -29,6 +30,18 @@ const Register = ( props ) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+
+        if (!/[A-Z]/.test(userInfo.pwd)) {
+            setPwdErr("Password must contain at least one uppercase letter.");
+            return;
+        }
+
+        if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-]/.test(userInfo.pwd)) {
+            setPwdErr("Password must contain at least one symbol character.");
+            return;
+        }
+
+        setPwdErr('')
         props.handleRegister(userInfo);
     }
 
@@ -42,6 +55,7 @@ const Register = ( props ) => {
                     </button>
                     {props.children}
                     <h1 className={style.regHeader}>Register</h1>
+                    {pwdErr && <p style={{ color: 'red' }}>{pwdErr}</p>}
                     <br></br>
                     <label>Your Name:</label>
                     <br></br>
@@ -49,19 +63,18 @@ const Register = ( props ) => {
                         type="text"
                         id="name"
                         className={style.regBox}
-                        autoComplete="off"
                         onChange={(e) => setUserInfo({...userInfo, name: e.target.value})} 
                         value={userInfo.name}
+                        maxLength={15}
                         required
                     />
                     <br></br>
                     <label>Email:</label>
                     <br></br>
                     <input 
-                        type="text"
+                        type="email"
                         id="email"
                         className={style.regBox}
-                        autoComplete="off"
                         onChange={(e) => setUserInfo({...userInfo, email: e.target.value})} 
                         value={userInfo.email}
                         required
@@ -73,9 +86,9 @@ const Register = ( props ) => {
                         type="password"
                         id="password"
                         className={style.regBox}
-                        autoComplete="off"
                         onChange={(e) => setUserInfo({...userInfo, pwd: e.target.value})} 
                         value={userInfo.pwd}
+                        maxLength={12}
                         required
                     />
                     <br></br>

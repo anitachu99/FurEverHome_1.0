@@ -16,6 +16,7 @@ function Adopt () {
     const [loginPopup, setLoginPopup] = useState(false);
     const [regPopup, setRegPopup] = useState(false);
     const [user, setUser] = useState({ name: "", email: "" })
+    const [errMsg, setErrMsg] = useState("");
     
     useEffect(() => {
         const fetchingData = async () => {
@@ -52,8 +53,6 @@ function Adopt () {
             setUser({
                 email: userInfo.email,
             })
-        } else {
-            console.log("Need email and password!!");
         }
     }
 
@@ -65,17 +64,11 @@ function Adopt () {
     const handleRegister = userInfo => {
         console.log(userInfo);
 
-        if (userInfo.name !== "") {
+        if (userInfo.name !== "" && userInfo.email !== "") {
             setUser({ 
                 name: userInfo.name, 
                 email: userInfo.email 
             });
-        }
-        if (userInfo.email !== "") {
-            setUser({ email: userInfo.email });
-        }
-        else {
-            console.log("Need name, email and password!!");
         }
     }
 
@@ -92,12 +85,12 @@ function Adopt () {
                 onAction={loginPopup} 
                 setonAction={setLoginPopup} 
                 setRegPopup={setRegPopup} 
-                handleLogIn={handleLogIn} 
+                handleLogIn={handleLogIn}
             />
             <Register 
                 onAction={regPopup} 
                 setonAction={setRegPopup}
-                handleRegister={handleRegister} 
+                handleRegister={handleRegister}
             />
             <Grid
                 className={style.main_grid}

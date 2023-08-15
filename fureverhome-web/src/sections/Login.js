@@ -7,9 +7,22 @@ import { useNavigate } from "react-router";
 
 const Login = ( props ) => {
     const [userInfo, setUserInfo] = useState({ email: '', pwd: ''});
+    const [pwdErr, setPwdErr] = useState('');
 
     const handleSubmit = e => {
         e.preventDefault();
+
+        if (!/[A-Z]/.test(userInfo.pwd)) {
+            setPwdErr("Password must contain at least one uppercase letter.");
+            return;
+        }
+
+        if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-]/.test(userInfo.pwd)) {
+            setPwdErr("Password must contain at least one symbol character.");
+            return;
+        }
+
+        setPwdErr('')
         props.handleLogIn(userInfo);
     }
 
@@ -46,6 +59,7 @@ const Login = ( props ) => {
                             value={userInfo.pwd}
                             required
                         />
+                        {pwdErr && <p style={{ color: 'red' }}>{pwdErr}</p>}
                         <br></br>
                         <button className={style.loginButton}>LOGIN</button>
                         <p className={style.noaccount}>
