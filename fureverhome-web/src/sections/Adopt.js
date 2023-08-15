@@ -5,10 +5,9 @@ import style from './styling/Adopt.module.scss';
 import AdoptCards from './Adopt_cards';
 import { Grid } from '@mui/material';
 import NavBar from './NavBar';
-import { BrowserRouter, useNavigate } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase-config';
 
 function Adopt () {
@@ -16,6 +15,7 @@ function Adopt () {
     const [loading, setLoading] = useState(true);
     const [loginPopup, setLoginPopup] = useState(false);
     const [regPopup, setRegPopup] = useState(false);
+    const [user, setUser] = useState({ name: "", email: "" })
     
     useEffect(() => {
         const fetchingData = async () => {
@@ -45,11 +45,60 @@ function Adopt () {
     }, []);
     console.log(data);
 
+    const handleLogIn = userInfo => {
+        console.log(userInfo);
+
+        if (userInfo.email !== "" && userInfo.pwd !== "") {
+            setUser({
+                email: userInfo.email,
+            })
+        } else {
+            console.log("Need email and password!!");
+        }
+    }
+
+    const handleLogOut = userInfo => {
+        console.log("Logged Out");
+        setUser({ email: "" });
+    }
+
+    const handleRegister = userInfo => {
+        console.log(userInfo);
+
+        if (userInfo.name !== "") {
+            setUser({ 
+                name: userInfo.name, 
+                email: userInfo.email 
+            });
+        }
+        if (userInfo.email !== "") {
+            setUser({ email: userInfo.email });
+        }
+        else {
+            console.log("Need name, email and password!!");
+        }
+    }
+
     return (
         <main className={style.Adopt_page}>
-            <NavBar setLoginPopup={setLoginPopup} setRegPopup={setRegPopup} />
-            <Login onAction={loginPopup} setonAction={setLoginPopup} setRegPopup={setRegPopup}/>
-            <Register onAction={regPopup} setonAction={setRegPopup} />
+            <NavBar 
+                setLoginPopup={setLoginPopup} 
+                setRegPopup={setRegPopup} 
+                user={user} 
+                handleLogOut={handleLogOut} 
+                handleRegister={handleRegister}
+            />
+            <Login 
+                onAction={loginPopup} 
+                setonAction={setLoginPopup} 
+                setRegPopup={setRegPopup} 
+                handleLogIn={handleLogIn} 
+            />
+            <Register 
+                onAction={regPopup} 
+                setonAction={setRegPopup}
+                handleRegister={handleRegister} 
+            />
             <Grid
                 className={style.main_grid}
                 container 

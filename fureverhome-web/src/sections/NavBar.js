@@ -1,27 +1,10 @@
-import { useState } from "react";
 import fur from "./images/feh_logo.png";
 import style from "./styling/NavBar.module.scss";
-import { NavBarItems } from "./NavBarItems";
-import { Link } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faCircleInfo, faCircleQuestion, faUser, faHandFist } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from "react-router";
-import { signOut } from "firebase/auth";
-import { auth } from "../firebase-config";
+import { faHouse, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
-const NavBar = ({ setLoginPopup, setRegPopup }) => {
-    const nav = useNavigate();
-
-    const handleLogOut = () => {
-        signOut(auth).then(() => {
-            nav("/");
-            console.log("Signed Out Successfully");
-        }).catch((error) => {
-            const errorCode = error.code;
-            const errorMsg = error.message;
-            console.log(errorCode, errorMsg);
-        });
-    }
+const NavBar = ({ setLoginPopup, setRegPopup, user, handleLogOut, handleRegister }) => {
+    
     return (
         <div className={style.navBarWrapper}>
             <a href="/" className={style.homeLogo}>
@@ -41,12 +24,18 @@ const NavBar = ({ setLoginPopup, setRegPopup }) => {
                 <a href="/AboutUs" className={style.aboutUs_Icon}>
                     <FontAwesomeIcon icon={faCircleInfo} size="2xl" style={{color: "#c38d9e",}} />
                 </a>
-                <a href="/Faq" className={style.faq_Icon}>
-                    <FontAwesomeIcon icon={faCircleQuestion} size="2xl" style={{color: "#c38d9e",}} />
-                </a>
-                <span onClick={() => setLoginPopup(true)} className={style.signInBtn}>Sign In</span>
-                <span onClick={handleLogOut} className={style.signInBtn}>Log Out</span>
-                <span onClick={() => setRegPopup(true)} className={style.signInBtn}>Register</span>
+
+                {(user.email !== '') ? (
+                    <>
+                        <h1 className={style.welcomeHeader}>Hello, <span>{user.email || user.name}</span></h1>
+                        <span onClick={handleLogOut} className={style.signInBtn}>Log Out</span>
+                    </>
+                ) : (
+                    <>
+                        <span onClick={() => setLoginPopup(true)} className={style.signInBtn}>Sign In</span>
+                        <span onClick={() => setRegPopup(true)} className={style.signInBtn}>Register</span>
+                    </>
+                )}
             </div>
         </div>
     )

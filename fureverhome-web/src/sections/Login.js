@@ -1,33 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { useRef, useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import style from "./styling/Login.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  { faXmark } from "@fortawesome/free-solid-svg-icons";
-import Register from "./Register";
-import { auth } from "../firebase-config";
 import { useNavigate } from "react-router";
-import { signInWithEmailAndPassword } from "firebase/auth";
 
-const Login = ( props ,{ Login, error } ) => {
+const Login = ( props ) => {
+    const [userInfo, setUserInfo] = useState({ email: '', pwd: ''});
 
-    const [email, setEmail] = useState("");
-    const [pwd, setPwd] = useState("");
-    const navigate = useNavigate();
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = e => {
         e.preventDefault();
-        signInWithEmailAndPassword(auth, email, pwd)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                navigate("/");
-                console.log(user);
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMsg = error.message;
-                console.log(errorCode, errorMsg);
-            })
+        props.handleLogIn(userInfo);
     }
 
     return (props.onAction) ? ( 
@@ -49,7 +32,8 @@ const Login = ( props ,{ Login, error } ) => {
                             type="email"
                             id="email"
                             className={style.loginBox}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e) => setUserInfo({...userInfo, email: e.target.value})} 
+                            value={userInfo.email}
                             required
                         />
                         <br></br>
@@ -58,7 +42,8 @@ const Login = ( props ,{ Login, error } ) => {
                             type="password"
                             id="password"
                             className={style.loginBox}
-                            onChange={(e) => setPwd(e.target.value)}
+                            onChange={(e) => setUserInfo({...userInfo, pwd: e.target.value})}
+                            value={userInfo.pwd}
                             required
                         />
                         <br></br>

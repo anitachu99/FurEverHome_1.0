@@ -8,39 +8,28 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 
 const Register = ( props ) => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [pwd, setPwd] = useState("");
+    const [userInfo, setUserInfo] = useState({ name: '', email: '', pwd: ''});
 
     const navigate = useNavigate();
-
-    // let navigate = useNavigate();
-
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
-    //     setErrMsg("");
-    //     try {
-    //         await signingUp(email, pwd);
-    //         navigate("/Login");
-    //     } catch (error) {
-    //         setErrMsg(error.message);
-    //     }
-    // };
 
-    const handleSubmit = async (e) => {
+    //     await createUserWithEmailAndPassword(auth, email, pwd)
+    //         .then((userCredential) => {
+    //             const user = userCredential.user;
+    //             console.log(user);
+    //             navigate("/Adopt")
+    //         })
+    //         .catch((error) => {
+    //             const errorCode = error.code;
+    //             const errorMsg = error.message;
+    //             console.log(errorCode, errorMsg);
+    //         })
+    // }
+
+    const handleSubmit = e => {
         e.preventDefault();
-
-        await createUserWithEmailAndPassword(auth, email, pwd)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user);
-                navigate("/Adopt")
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMsg = error.message;
-                console.log(errorCode, errorMsg);
-            })
+        props.handleRegister(userInfo);
     }
 
     return (props.onAction) ? (
@@ -61,8 +50,8 @@ const Register = ( props ) => {
                         id="name"
                         className={style.regBox}
                         autoComplete="off"
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
+                        onChange={(e) => setUserInfo({...userInfo, name: e.target.value})} 
+                        value={userInfo.name}
                         required
                     />
                     <br></br>
@@ -73,8 +62,8 @@ const Register = ( props ) => {
                         id="email"
                         className={style.regBox}
                         autoComplete="off"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
+                        onChange={(e) => setUserInfo({...userInfo, email: e.target.value})} 
+                        value={userInfo.email}
                         required
                     />
                     <br></br>
@@ -85,8 +74,8 @@ const Register = ( props ) => {
                         id="password"
                         className={style.regBox}
                         autoComplete="off"
-                        onChange={(e) => setPwd(e.target.value)}
-                        value={pwd}
+                        onChange={(e) => setUserInfo({...userInfo, pwd: e.target.value})} 
+                        value={userInfo.pwd}
                         required
                     />
                     <br></br>
