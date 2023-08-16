@@ -4,26 +4,33 @@ import style from "./styling/Login.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase-config";
 
 const Login = ( props ) => {
     const [userInfo, setUserInfo] = useState({ email: '', pwd: ''});
-    const [pwdErr, setPwdErr] = useState('');
+    const [userNotFound, setUserNotFound] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = e => {
         e.preventDefault();
-
-        if (!/[A-Z]/.test(userInfo.pwd)) {
-            setPwdErr("Password must contain at least one uppercase letter.");
-            return;
-        }
-
-        if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-]/.test(userInfo.pwd)) {
-            setPwdErr("Password must contain at least one symbol character.");
-            return;
-        }
-
-        setPwdErr('')
         props.handleLogIn(userInfo);
+
+        signInWithEmailAndPassword(auth, userInfo.email, userInfo.pwd)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            navigate("/Adopt");
+        })
+        .catch((error) => {
+            const errCode = error.code;
+            const errMessage = error.message;
+            console.log(errCode, errMessage);
+
+            if (errCode === "auth/user-not-found") {
+                setUserNotFound("User not found");
+            }
+        })    
     }
 
     return (props.onAction) ? ( 
@@ -36,6 +43,7 @@ const Login = ( props ) => {
                         </button>
                         {props.children}
                         <h1 className={style.loginHeader}>Sign In</h1>
+                        {userNotFound && <p style={{ color: 'red' }}>{userNotFound}</p>}
                         <br></br>
                         {/* Notes: 'htmlFor' ==> gives id of associated input */}
                         <label htmlFor="username">Username:</label>
@@ -59,7 +67,6 @@ const Login = ( props ) => {
                             value={userInfo.pwd}
                             required
                         />
-                        {pwdErr && <p style={{ color: 'red' }}>{pwdErr}</p>}
                         <br></br>
                         <button className={style.loginButton}>LOGIN</button>
                         <p className={style.noaccount}>

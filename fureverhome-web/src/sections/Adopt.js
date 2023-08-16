@@ -86,11 +86,13 @@ function Adopt () {
                 setonAction={setLoginPopup} 
                 setRegPopup={setRegPopup} 
                 handleLogIn={handleLogIn}
+                user={user}
             />
             <Register 
                 onAction={regPopup} 
                 setonAction={setRegPopup}
                 handleRegister={handleRegister}
+                user={user}
             />
             <Grid
                 className={style.main_grid}
@@ -98,7 +100,7 @@ function Adopt () {
                 direction="row" 
                 justifyContent="center" 
                 alignItems="stretch" 
-                spacing={2} >
+                spacing={2} >               
                 {loading ? (
                     <CircularProgress />
                 ) : (

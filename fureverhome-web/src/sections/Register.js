@@ -10,25 +10,11 @@ import { auth } from "../firebase-config";
 const Register = ( props ) => {
     const [userInfo, setUserInfo] = useState({ name: '', email: '', pwd: ''});
     const [pwdErr, setPwdErr] = useState('');
+    const [emailError, setEmailError] = useState('');
 
     const navigate = useNavigate();
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
 
-    //     await createUserWithEmailAndPassword(auth, email, pwd)
-    //         .then((userCredential) => {
-    //             const user = userCredential.user;
-    //             console.log(user);
-    //             navigate("/Adopt")
-    //         })
-    //         .catch((error) => {
-    //             const errorCode = error.code;
-    //             const errorMsg = error.message;
-    //             console.log(errorCode, errorMsg);
-    //         })
-    // }
-
-    const handleSubmit = e => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!/[A-Z]/.test(userInfo.pwd)) {
@@ -41,8 +27,30 @@ const Register = ( props ) => {
             return;
         }
 
-        setPwdErr('')
+        setPwdErr('');
+
         props.handleRegister(userInfo);
+
+        await createUserWithEmailAndPassword(auth, userInfo.email, userInfo.pwd)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                navigate("/Adopt");
+            })
+            .catch((error) => {
+                const errCode = error.code;
+                const errMessage = error.message;
+                console.log(errCode, errMessage);
+
+                if (errCode === "auth/email-already-in-use") {
+                    setEmailError("The email is already in use. Please sign in!");
+                    setUserInfo({
+                        name: '',
+                        email: '', 
+                        pwd: ''
+                    })
+                }
+            }) 
     }
 
     return (props.onAction) ? (
@@ -56,6 +64,7 @@ const Register = ( props ) => {
                     {props.children}
                     <h1 className={style.regHeader}>Register</h1>
                     {pwdErr && <p style={{ color: 'red' }}>{pwdErr}</p>}
+                    {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
                     <br></br>
                     <label>Your Name:</label>
                     <br></br>
