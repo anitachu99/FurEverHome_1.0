@@ -11,6 +11,7 @@ const Register = ( props ) => {
     const [userInfo, setUserInfo] = useState({ name: '', email: '', pwd: ''});
     const [pwdErr, setPwdErr] = useState('');
     const [emailError, setEmailError] = useState('');
+    const [emailInUse, setEmailInUse] = useState(false);
 
     const navigate = useNavigate();
 
@@ -49,6 +50,7 @@ const Register = ( props ) => {
                         email: '', 
                         pwd: ''
                     })
+                    props.setEmailInUse(true);
                 }
             }) 
     }

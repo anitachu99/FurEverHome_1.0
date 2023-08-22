@@ -16,7 +16,8 @@ function Adopt () {
     const [loginPopup, setLoginPopup] = useState(false);
     const [regPopup, setRegPopup] = useState(false);
     const [user, setUser] = useState({ name: "", email: "" })
-    const [errMsg, setErrMsg] = useState("");
+    const [emailInUse, setEmailInUse] = useState(false);
+    const [userUnknown, setUserUnknown] = useState(false);
     
     useEffect(() => {
         const fetchingData = async () => {
@@ -56,7 +57,7 @@ function Adopt () {
         }
     }
 
-    const handleLogOut = userInfo => {
+    const handleLogOut = () => {
         console.log("Logged Out");
         setUser({ email: "" });
     }
@@ -80,17 +81,21 @@ function Adopt () {
                 user={user} 
                 handleLogOut={handleLogOut} 
                 handleRegister={handleRegister}
+                emailInUse={emailInUse}
+                userUnknown={userUnknown}
             />
             <Login 
                 onAction={loginPopup} 
                 setonAction={setLoginPopup} 
-                setRegPopup={setRegPopup} 
+                setRegPopup={setRegPopup}
+                setUserUnknown={setUserUnknown} 
                 handleLogIn={handleLogIn}
                 user={user}
             />
             <Register 
                 onAction={regPopup} 
                 setonAction={setRegPopup}
+                setEmailInUse={setEmailInUse}
                 handleRegister={handleRegister}
                 user={user}
             />

@@ -3,8 +3,12 @@ import style from "./styling/NavBar.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
-const NavBar = ({ setLoginPopup, setRegPopup, user, handleLogOut }) => {
-    
+const NavBar = ({ emailInUse, handleLogOut, setLoginPopup, setRegPopup, user, userUnknown }) => {
+    const handleWelcomeBanner = ({userUnknown, emailInUse}) => {
+        emailInUse = true;
+        userUnknown = true;
+        user.email = '';
+    }
     return (
         <div className={style.navBarWrapper}>
             <a href="/" className={style.homeLogo}>
@@ -25,8 +29,8 @@ const NavBar = ({ setLoginPopup, setRegPopup, user, handleLogOut }) => {
                     <FontAwesomeIcon icon={faCircleInfo} size="2xl" style={{color: "#c38d9e",}} />
                 </a>
 
-                {(user.email !== '') ? (
-                    <>
+                {(!handleWelcomeBanner) ? (
+                    <> 
                         <h1 className={style.welcomeHeader}>Welcome, <span>{user.name}</span></h1>
                         <span onClick={handleLogOut} className={style.signInBtn}>Log Out</span>
                     </>
