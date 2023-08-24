@@ -41,6 +41,7 @@ const AdoptCards = ({cards}) => {
                     <li>{cards.type}</li>
                     <li>{cards.age}</li>
                     <li>{cards.gender}</li>
+                    <li>State: {cards.contact.address.state}</li>
                 </Typography>
             </CardContent>
         </Card>

@@ -9,6 +9,7 @@ import Login from './Login';
 import Register from './Register';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase-config';
+import SearchBar from './SearchBar';
 
 function Adopt () {
     const [data, setData] = useState([]);
