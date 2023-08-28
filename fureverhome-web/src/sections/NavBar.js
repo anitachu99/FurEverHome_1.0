@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from "./SearchBar";
 
-const NavBar = ({ emailInUse, handleLogOut, setLoginPopup, setRegPopup, user, userUnknown }) => {
+const NavBar = ({ emailInUse, handleLogOut, onInput, setLoginPopup, setRegPopup, user, userUnknown }) => {
 
     return (
         <div className={style.navBarWrapper}>
             <a href="/" className={style.homeLogo}>
                 <img src={fur} className={style.logo} alt="logo" style={{ width: 100, height: 100 }}/>
             </a>
-            <SearchBar />
+            <SearchBar onSearch={onInput}/>
             <div className={style.iconMenu}>
                 <a href="/" className={style.home_Icon}>
                     <FontAwesomeIcon icon={faHouse} size="2xl" style={{color: "#c38d9e",}} alt="Home" />

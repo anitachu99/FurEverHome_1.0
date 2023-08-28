@@ -19,6 +19,8 @@ function Adopt () {
     const [user, setUser] = useState({ name: "", email: "" })
     const [emailInUse, setEmailInUse] = useState(false);
     const [userUnknown, setUserUnknown] = useState(false);
+    const [filteredData, setFilteredData] = useState(data);
+    
     
     useEffect(() => {
         const fetchingData = async () => {
@@ -29,6 +31,7 @@ function Adopt () {
                     }
                 });
                 setData(response.data.animals || []);
+                console.log(data)
                 setLoading(false);
             } catch (error) {
                 console.error(error);
@@ -74,6 +77,17 @@ function Adopt () {
         }
     }
 
+    const handleSearch = (query) => {
+        if (query == '') {
+            setFilteredData(data);
+        } else {
+            const filtered = data.filter(item => 
+                item.type.toLowerCase().includes(query.toLowerCase())
+            );
+            setFilteredData(filtered);
+        }
+    }
+
     return (
         <main className={style.Adopt_page}>
             <NavBar 
@@ -84,6 +98,7 @@ function Adopt () {
                 handleRegister={handleRegister}
                 emailInUse={emailInUse}
                 userUnknown={userUnknown}
+                onInput={handleSearch}
             />
             <Login 
                 onAction={loginPopup} 
@@ -110,12 +125,11 @@ function Adopt () {
                 {loading ? (
                     <CircularProgress />
                 ) : (
-                    data.map((cards, index) => (
+                    filteredData.map((cards, index) => (
                         <Grid className={style.grid} item xs={12} sm={6} md={3} key={index}>
-                            <AdoptCards className={style.cards} cards={cards} />
+                                <AdoptCards className={style.cards} cards={cards} />
                         </Grid>
                     ))
-                    
                 )}
 
             </Grid>
