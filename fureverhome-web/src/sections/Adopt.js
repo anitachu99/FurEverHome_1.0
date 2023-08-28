@@ -31,7 +31,6 @@ function Adopt () {
                     }
                 });
                 setData(response.data.animals || []);
-                console.log(data)
                 setLoading(false);
             } catch (error) {
                 console.error(error);
@@ -78,7 +77,7 @@ function Adopt () {
     }
 
     const handleSearch = (query) => {
-        if (query == '') {
+        if (query == "" ) {
             setFilteredData(data);
         } else {
             const filtered = data.filter(item => 
@@ -125,11 +124,19 @@ function Adopt () {
                 {loading ? (
                     <CircularProgress />
                 ) : (
-                    filteredData.map((cards, index) => (
+                    filteredData.length > 0 ? (
+                        filteredData.map((cards, index) => (
                         <Grid className={style.grid} item xs={12} sm={6} md={3} key={index}>
                                 <AdoptCards className={style.cards} cards={cards} />
                         </Grid>
-                    ))
+                        )) 
+                    ) : (
+                        data.map((cards, index) => (
+                            <Grid className={style.grid} item xs={12} sm={6} md={3} key={index}>
+                                    <AdoptCards className={style.cards} cards={cards} />
+                            </Grid>
+                        ))
+                    )
                 )}
 
             </Grid>
