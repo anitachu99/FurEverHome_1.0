@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+
+#faq_section {
+    background-color: #C38D9E;
+}
+#heading {
+    color: white;
+    font-size: 64px;
+    font-family: 'Lato';
+    font-weight: bolder;
+    margin: 25px;
+    text-align: center;
+    text-decoration: underline;
+    text-shadow: 5px 5px#8e9294;
+    position: relative;
+    z-index: 999;
+    background-color: transparent;
+}
+
+#headerWrapper {
+    background-color: transparent;
+}
+
+.circle {
+    width: 589px;
+    height: 600px;
+    left: 880px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #e5b18e;
+    box-shadow: 2px 5px 3px #d39870;
+}
+.circle2 {
+    width: 842px;
+    height: 821px;
+    left: 500px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #e8a87c;
+    box-shadow: 2px 5px 3px #de8950;
+}
+.circleGroup1 {
+    padding: 10px;
+    background-color: transparent;
+}
+
+.faqArticle {
+    background-color: #8cc9c59e;
+    border-radius: 30px;
+    max-height: 580px;
+    width: auto;
+    padding: 50px;
+    z-index: 999;
+    margin: 5px 400px 5px 400px;
+}
+
+.questionWrapper {
+    padding: 1rem 0;
+}
+
+.questionWrapper .box {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.questionWrapper h2{
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.questionWrapper p{
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+
+  
+  

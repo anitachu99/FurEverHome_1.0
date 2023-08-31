@@ -34,7 +34,7 @@ const AboutUs = forwardRef((props, ref) => {
           </article>
           <div className={styles.rect2Wrapper}>
             <div className={styles.rect2}>
-              <h1>Contact: 1-888-FUR-EVER furEver@gmail.com</h1>
+              <h1>Contact: 1-888-FUR-EVER yourFurEverPet@gmail.com</h1>
             </div>
           </div>
         </main>
