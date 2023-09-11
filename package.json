@@ -1,7 +1,7 @@
 {
   "name": "fureverhome-web",
   "version": "0.1.0",
-  "homepage": "https://anitachu99.github.io/",
+  "homepage": "https://anitachu99.github.io/FurEverHome_1.0",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -34,10 +34,10 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-app-rewired start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
