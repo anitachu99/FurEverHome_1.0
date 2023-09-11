@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/fureverhome-web/static/css/main.f84efb6f.css",
-    "main.js": "/fureverhome-web/static/js/main.34bc1ddc.js",
-    "static/js/787.eaf3b3b0.chunk.js": "/fureverhome-web/static/js/787.eaf3b3b0.chunk.js",
-    "static/media/dog2.jpg": "/fureverhome-web/static/media/dog2.100c9ccef4cff6ad0f96.jpg",
-    "static/media/cat.png": "/fureverhome-web/static/media/cat.d429d668fec5d73eae96.png",
-    "static/media/dog.png": "/fureverhome-web/static/media/dog.317b8847083d0acb7319.png",
-    "static/media/dogPickup.jpg": "/fureverhome-web/static/media/dogPickup.de1aa65d6b12e07fba33.jpg",
-    "static/media/feh_logo.png": "/fureverhome-web/static/media/feh_logo.421adc794170660658a4.png",
-    "static/media/kitten.jpg": "/fureverhome-web/static/media/kitten.9623a026acdf38cac346.jpg",
-    "index.html": "/fureverhome-web/index.html",
-    "main.f84efb6f.css.map": "/fureverhome-web/static/css/main.f84efb6f.css.map",
-    "main.34bc1ddc.js.map": "/fureverhome-web/static/js/main.34bc1ddc.js.map",
-    "787.eaf3b3b0.chunk.js.map": "/fureverhome-web/static/js/787.eaf3b3b0.chunk.js.map"
+    "main.css": "/FurEverHome_1.0/static/css/main.f84efb6f.css",
+    "main.js": "/FurEverHome_1.0/static/js/main.0df0b8b7.js",
+    "static/js/787.eaf3b3b0.chunk.js": "/FurEverHome_1.0/static/js/787.eaf3b3b0.chunk.js",
+    "static/media/dog2.jpg": "/FurEverHome_1.0/static/media/dog2.100c9ccef4cff6ad0f96.jpg",
+    "static/media/cat.png": "/FurEverHome_1.0/static/media/cat.d429d668fec5d73eae96.png",
+    "static/media/dog.png": "/FurEverHome_1.0/static/media/dog.317b8847083d0acb7319.png",
+    "static/media/dogPickup.jpg": "/FurEverHome_1.0/static/media/dogPickup.de1aa65d6b12e07fba33.jpg",
+    "static/media/feh_logo.png": "/FurEverHome_1.0/static/media/feh_logo.421adc794170660658a4.png",
+    "static/media/kitten.jpg": "/FurEverHome_1.0/static/media/kitten.9623a026acdf38cac346.jpg",
+    "index.html": "/FurEverHome_1.0/index.html",
+    "main.f84efb6f.css.map": "/FurEverHome_1.0/static/css/main.f84efb6f.css.map",
+    "main.0df0b8b7.js.map": "/FurEverHome_1.0/static/js/main.0df0b8b7.js.map",
+    "787.eaf3b3b0.chunk.js.map": "/FurEverHome_1.0/static/js/787.eaf3b3b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f84efb6f.css",
-    "static/js/main.34bc1ddc.js"
+    "static/js/main.0df0b8b7.js"
   ]
 }
