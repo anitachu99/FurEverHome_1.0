@@ -1,0 +1,97 @@
+[debug] [2023-08-31T16:26:42.174Z] ----------------------------------------------------------------------
+[debug] [2023-08-31T16:26:42.176Z] Command:       /opt/homebrew/Cellar/node/20.5.0/bin/node /opt/homebrew/bin/firebase init
+[debug] [2023-08-31T16:26:42.176Z] CLI Version:   12.5.2
+[debug] [2023-08-31T16:26:42.176Z] Platform:      darwin
+[debug] [2023-08-31T16:26:42.176Z] Node Version:  v20.5.0
+[debug] [2023-08-31T16:26:42.176Z] Time:          Thu Aug 31 2023 12:26:42 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-08-31T16:26:42.176Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-31T16:26:42.216Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-31T16:26:42.216Z] > authorizing via signed-in user (c8anita@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/anitachu1/FurEverHome_1.0/fureverhome-web
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-08-31T16:26:50.184Z] Using project from CLI flag: fureverhome-59d6a
+[debug] [2023-08-31T16:26:50.186Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fureverhome-59d6a [none]
+[debug] [2023-08-31T16:26:50.661Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fureverhome-59d6a 200
+[debug] [2023-08-31T16:26:50.662Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fureverhome-59d6a {"projectId":"fureverhome-59d6a","projectNumber":"207077064291","displayName":"furEverHome","name":"projects/fureverhome-59d6a","resources":{"hostingSite":"fureverhome-59d6a","realtimeDatabaseInstance":"fureverhome-59d6a-default-rtdb"},"state":"ACTIVE","etag":"1_1351c76e-3d81-49e9-89ce-2d33af2daaa4"}
+[info] i  Using project fureverhome-59d6a (furEverHome) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2023-08-31T16:26:58.190Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2023-08-31T16:26:58.333Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2023-08-31T16:26:58.333Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.3.1","browserURL":"https://www.gstatic.com/firebasejs/10.3.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.3.1/firebase.tgz"},"live":{"version":"10.3","browserURL":"https://www.gstatic.com/firebasejs/live/10.3/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.3/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.3.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.3.1/firebase-auth/cordova.js","functions":"https://www.gstatic.com/firebasejs/10.3.1/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.3.1/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.3.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.3.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.3.1/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.3.1/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.3.1/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.memory.js"}}
+[info] i  Skipping write of build/index.html 
+[info] 
+[info] i  Detected a .git folder at /Users/anitachu1/FurEverHome_1.0 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=132220487&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-08-31T16:27:01.744Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2023-08-31T16:27:01.745Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2023-08-31T16:27:01.964Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2023-08-31T16:27:01.964Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2023-08-31T16:27:01.974Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2023-08-31T16:27:02.192Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2023-08-31T16:27:02.193Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"anitachu99","id":30139006,"node_id":"MDQ6VXNlcjMwMTM5MDA2","avatar_url":"https://avatars.githubusercontent.com/u/30139006?v=4","gravatar_id":"","url":"https://api.github.com/users/anitachu99","html_url":"https://github.com/anitachu99","followers_url":"https://api.github.com/users/anitachu99/followers","following_url":"https://api.github.com/users/anitachu99/following{/other_user}","gists_url":"https://api.github.com/users/anitachu99/gists{/gist_id}","starred_url":"https://api.github.com/users/anitachu99/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/anitachu99/subscriptions","organizations_url":"https://api.github.com/users/anitachu99/orgs","repos_url":"https://api.github.com/users/anitachu99/repos","events_url":"https://api.github.com/users/anitachu99/events{/privacy}","received_events_url":"https://api.github.com/users/anitachu99/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":13,"public_gists":0,"followers":2,"following":2,"created_at":"2017-07-13T05:51:21Z","updated_at":"2023-05-25T19:03:31Z","private_gists":0,"total_private_repos":2,"owned_private_repos":2,"disk_usage":27879,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] ✔  Success! Logged into GitHub as anitachu99 
+[info] 
+[debug] [2023-08-31T16:27:45.850Z] >>> [apiv2][query] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0/fureverhome-web/actions/secrets/public-key type=owner
+[debug] [2023-08-31T16:27:45.994Z] <<< [apiv2][status] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0/fureverhome-web/actions/secrets/public-key 404
+[debug] [2023-08-31T16:27:45.994Z] <<< [apiv2][body] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0/fureverhome-web/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[info] 
+[info] 
+[error] ⚠  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-08-31T16:27:56.328Z] >>> [apiv2][query] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0/fureverhome-web/actions/secrets/public-key type=owner
+[debug] [2023-08-31T16:27:56.533Z] <<< [apiv2][status] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0/fureverhome-web/actions/secrets/public-key 404
+[debug] [2023-08-31T16:27:56.533Z] <<< [apiv2][body] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0/fureverhome-web/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[info] 
+[info] 
+[error] ⚠  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-08-31T16:28:41.536Z] >>> [apiv2][query] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0//actions/secrets/public-key type=owner
+[debug] [2023-08-31T16:28:41.706Z] <<< [apiv2][status] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0//actions/secrets/public-key 404
+[debug] [2023-08-31T16:28:41.706Z] <<< [apiv2][body] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[info] 
+[info] 
+[error] ⚠  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2023-09-01T03:03:11.647Z] >>> [apiv2][query] GET https://api.github.com/repos/anitachu99/FurEverHome_1.0//actions/secrets/public-key type=owner
