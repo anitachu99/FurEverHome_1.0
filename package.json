@@ -1,7 +1,7 @@
 {
   "name": "fureverhome-web",
   "version": "0.1.0",
-  "homepage": "https://anitachu99.github.io/FurEverHome_1.0",
+  "homepage": "https://anitachu99.github.io/fureverhome_1.0",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.11.1",
