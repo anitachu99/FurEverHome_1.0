@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/FurEverHome_1.0/static/css/main.f84efb6f.css",
-    "main.js": "/FurEverHome_1.0/static/js/main.0df0b8b7.js",
+    "main.js": "/FurEverHome_1.0/static/js/main.879328db.js",
     "static/js/787.eaf3b3b0.chunk.js": "/FurEverHome_1.0/static/js/787.eaf3b3b0.chunk.js",
     "static/media/dog2.jpg": "/FurEverHome_1.0/static/media/dog2.100c9ccef4cff6ad0f96.jpg",
     "static/media/cat.png": "/FurEverHome_1.0/static/media/cat.d429d668fec5d73eae96.png",
@@ -11,11 +11,11 @@
     "static/media/kitten.jpg": "/FurEverHome_1.0/static/media/kitten.9623a026acdf38cac346.jpg",
     "index.html": "/FurEverHome_1.0/index.html",
     "main.f84efb6f.css.map": "/FurEverHome_1.0/static/css/main.f84efb6f.css.map",
-    "main.0df0b8b7.js.map": "/FurEverHome_1.0/static/js/main.0df0b8b7.js.map",
+    "main.879328db.js.map": "/FurEverHome_1.0/static/js/main.879328db.js.map",
     "787.eaf3b3b0.chunk.js.map": "/FurEverHome_1.0/static/js/787.eaf3b3b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f84efb6f.css",
-    "static/js/main.0df0b8b7.js"
+    "static/js/main.879328db.js"
   ]
 }
