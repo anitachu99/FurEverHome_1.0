@@ -19,13 +19,8 @@ jobs:
           node-version: latest
 
       - name: Install Dependencies
+        working-directory: ./FurEverHome_1.0/package.json
         run: npm install
-
-      - name: Install react-scripts
-        run: npm install react-scripts
-      
-      - name: Build
-        run: npm run build
 
       - name: Deploy
         run: npm run deploy
