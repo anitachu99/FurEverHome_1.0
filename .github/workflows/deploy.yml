@@ -21,5 +21,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build and deploy
+      - name: Install react-scripts
+        working-directory: ./app
+        run: npm install react-scripts
+      
+      - name: Build
+        working-directory: ./app
+        run: npm run build
+
+      - name: Deploy
         run: npm run deploy
