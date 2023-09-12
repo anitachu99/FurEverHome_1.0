@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: 20.5.0
 
       - name: Install Dependencies
         working-directory: ./FurEverHome_1.0/package.json
@@ -24,3 +24,8 @@ jobs:
 
       - name: Deploy
         run: npm run deploy
+      
+      - name: Debug
+        run: |
+          pwd
+          ls -l
