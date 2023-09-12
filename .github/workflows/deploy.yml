@@ -19,7 +19,6 @@ jobs:
           node-version: 20.5.0
 
       - name: Install Dependencies
-        working-directory: ./FurEverHome_1.0/package.json
         run: npm install
 
       - name: Deploy
