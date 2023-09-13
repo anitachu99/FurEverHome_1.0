@@ -17,12 +17,23 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.5.0
-          
+
       - name: Clear npm cache
         run: npm cache clean --force
 
       - name: Install Dependencies
         run: npm install
+
+      - name: Configure Git User Identity
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+
+      - name: Commit and Push Changes
+        run: |
+          git add .
+          git commit -m "Set Git user identity for deployment"
+          git push
 
       - name: Deploy
         run: npm run deploy
