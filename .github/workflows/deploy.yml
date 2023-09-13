@@ -29,6 +29,9 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
 
+      - name: Copy a private repo
+        run: git clone git@github.com:MyUsername/MyRepo.git
+
       - name: Deploy
         run: npm run deploy
       
