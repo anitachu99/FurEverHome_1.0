@@ -1,8 +1,5 @@
-import { useRef } from "react";
-import { useNavigate, Routes, Route, Switch, Link} from "react-router-dom";
 import Homepage from "./Homepage";
 import AboutUs from "./AboutUs";
-import Adopt from "./Adopt";
 import Faq from "./Faq";
 
 const Routing = ({homepageRef, aboutUsRef, faqRef}) => {

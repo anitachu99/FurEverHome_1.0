@@ -1,6 +1,4 @@
-import catImage from './images/cat.png';
-import dogImage from './images/dog.png';
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef } from 'react';
 import style from './styling/Faq.module.scss';
 import FaqActive from './FaqActive';
 

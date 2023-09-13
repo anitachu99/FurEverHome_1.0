@@ -1,5 +1,5 @@
-import { createContext, useRef, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import { useRef } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AboutUs from './sections/AboutUs';
 import Faq from './sections/Faq';
 import Routing from './sections/Routing';

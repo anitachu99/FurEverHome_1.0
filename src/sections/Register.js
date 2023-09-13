@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router";
-import { Alert } from "@mui/material";
 import style from "./styling/Register.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -11,8 +10,6 @@ const Register = ( props ) => {
     const [userInfo, setUserInfo] = useState({ name: '', email: '', pwd: ''});
     const [pwdErr, setPwdErr] = useState('');
     const [emailError, setEmailError] = useState('');
-    const [emailInUse, setEmailInUse] = useState(false);
-
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -23,6 +20,7 @@ const Register = ( props ) => {
             return;
         }
 
+        // eslint-disable-next-line no-useless-escape
         if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-]/.test(userInfo.pwd)) {
             setPwdErr("Password must contain at least one symbol character.");
             return;

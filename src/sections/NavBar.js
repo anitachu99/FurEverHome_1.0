@@ -20,6 +20,7 @@ const NavBar = ({ emailInUse, handleLogOut, onInput, setLoginPopup, setRegPopup,
                     <FontAwesomeIcon icon={faCircleInfo} size="2xl" style={{color: "#c38d9e",}} />
                 </a>
 
+                 {/* eslint-disable-next-line eqeqeq */}
                 {(user.email !== '' && (emailInUse == false || userUnknown == false)) ? (
                     <> 
                         <h1 className={style.welcomeHeader}>Welcome, <span>{user.name}</span></h1>

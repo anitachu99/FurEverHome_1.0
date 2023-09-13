@@ -10,7 +10,6 @@ import { auth } from "../firebase-config";
 const Login = ( props ) => {
     const [userInfo, setUserInfo] = useState({ email: '', pwd: ''});
     const [userNotFound, setUserNotFound] = useState('');
-    const [userUnknown, setUserUnknown] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = e => {

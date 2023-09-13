@@ -1,7 +1,6 @@
-import { Card, CardContent, CardHeader, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import style from "./styling/Adopt_cards.module.scss";
-import { useEffect, useState, Truncate } from "react";
-import axios from 'axios';
+import { useEffect, useState } from "react";
 import CardPhotos from "./cardPhotos";
 import NoImage from "./images/icons8-no-image-100.png";
 

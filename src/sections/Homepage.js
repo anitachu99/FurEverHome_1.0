@@ -1,9 +1,6 @@
 import catImage from './images/cat.png';
 import dogImage from './images/dog.png';
 import styles from './styling/HomePage.module.scss';
-import Adopt from './Adopt';
-import AboutUs from './AboutUs';
-import Faq from './Faq';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Homepage = ({aboutUsRef, faqRef}) => {

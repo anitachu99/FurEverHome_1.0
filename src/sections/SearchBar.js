@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import style from './styling/SearchBar.module.scss';
 
 const SearchBar = ({ onSearch }) => {

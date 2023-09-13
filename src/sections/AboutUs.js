@@ -1,5 +1,3 @@
-import catImage from './images/cat.png';
-import dogImage from './images/dog.png';
 import { forwardRef } from 'react';
 import styles from './styling/AboutUs.module.scss';
 import dogPickup from './images/dogPickup.jpg';
