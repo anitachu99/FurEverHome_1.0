@@ -29,12 +29,6 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
 
-      - name: Commit and Push Changes
-        run: |
-          git add .
-          git commit -m "Set Git user identity for deployment"
-          git push origin main
-
       - name: Deploy
         run: npm run deploy
       
