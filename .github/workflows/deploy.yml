@@ -1,43 +1,43 @@
-name: Deploy workflow
+# name: Deploy workflow
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout branch
+#         uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.5.0
+#       - name: Setup Node
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 20.5.0
 
-      - name: Clear npm cache
-        run: npm cache clean --force
+#       - name: Clear npm cache
+#         run: npm cache clean --force
 
-      - name: Install Dependencies
-        run: npm install
+#       - name: Install Dependencies
+#         run: npm install
 
-      - name: Configure Git User Identity
-        run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+#       - name: Configure Git User Identity
+#         run: |
+#           git config --global user.email "you@example.com"
+#           git config --global user.name "Your Name"
       
-      - name: Configure SSH Key
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+#       - name: Configure SSH Key
+#         uses: webfactory/ssh-agent@v0.5.3
+#         with:
+#           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
 
-      - name: Copy a private repo
-        run: git clone git@github.com:MyUsername/MyRepo.git
+#       - name: Copy a private repo
+#         run: git clone git@github.com:MyUsername/MyRepo.git
 
-      - name: Deploy
-        run: npm run deploy
+#       - name: Deploy
+#         run: npm run deploy
       
